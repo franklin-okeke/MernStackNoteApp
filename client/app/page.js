@@ -41,6 +41,12 @@ const Home = () =>{
        }
        fetchAllNotes()
     },[])
+      
+    // debug
+     useEffect(() => {
+       console.log("API URL 👉", process.env.NEXT_PUBLIC_API_URL);
+     }, []);
+
 
     return(
         <div className="min-h-screen w-full bg-gray-900 ">
