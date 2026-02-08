@@ -41,8 +41,13 @@ const NoteCard = ({note, setAllNotes}) => {
                     className='size-4 text-xs text-gray-300' />
 
                     <MdDelete 
-                    onClick={(e) =>deleteNote(e, note._id)}
-                    className='size-4 text-xs text-red-500' />
+                        onClick={(e) => {
+                            e.stopPropagation();  // stop Link navigation
+                            deleteNote(e, note._id);
+                        }}
+                        className='size-4 text-xs text-red-500' 
+                      />
+
                 </div>
             </div>
        </div>
