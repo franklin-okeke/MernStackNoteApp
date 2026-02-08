@@ -14,7 +14,7 @@ const NoteCard = ({note, setAllNotes}) => {
         if(!window.confirm("Are you sure you want to delete this note?")) return
 
         try {
-          await axios.delete(`http://localhost:8080/api/notes/${id}`)
+          await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/api/notes/${id}`)
           setAllNotes((prev) =>prev.filter(note =>note._id !== id))
           toast.success("Note Deleted Successfuly!")
           
