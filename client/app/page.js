@@ -42,11 +42,6 @@ const Home = () =>{
        fetchAllNotes()
     },[])
       
-    // debug
-     useEffect(() => {
-       console.log("API URL 👉", process.env.NEXT_PUBLIC_API_URL);
-     }, []);
-
 
     return(
         <div className="min-h-screen w-full bg-gray-900 ">
@@ -59,7 +54,7 @@ const Home = () =>{
             {allNotes.length === 0 && !rateLimited && <NoteNotFound/>}
 
             {allNotes.length > 0 && !rateLimited && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6  px-4 lg:px-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6  px-4 lg:px-12 mb-8">
                     {allNotes.map((note) =>(   
                          <NoteCard note={note} key={note._id} setAllNotes={setAllNotes}/> 
                     ))}
