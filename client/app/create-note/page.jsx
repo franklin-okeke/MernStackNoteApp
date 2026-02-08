@@ -25,7 +25,7 @@ const CreateNote = () => {
      
      setLoading(true)
      try {
-       await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/notes`,{
+       await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/notes`,{
         title,
         content
        })

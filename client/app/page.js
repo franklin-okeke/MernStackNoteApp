@@ -20,7 +20,7 @@ const Home = () =>{
        const fetchAllNotes = async () =>{
         try {
             setLoading(true)
-            const response =await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/notes`)
+            const response =await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/notes`)
             setAllNotes(response.data)
             
             setLoading(false)

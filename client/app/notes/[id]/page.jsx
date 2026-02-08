@@ -29,7 +29,7 @@ const NoteDetails = () => {
       const fetchNote = async() =>{
 
         try {
-          const response = await axios.get(`http://localhost:8080/api/notes/${id}`)
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/notes/${id}`)
           setNote(response.data) 
         } catch 
         (error) {
@@ -46,7 +46,7 @@ const NoteDetails = () => {
       if(!window.confirm("Are you sure you want to delete this note?")) return
 
       try {
-        await axios.delete(`${process.env.NEXT_PUBLIC_URL}/api/notes/${id}`)
+        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/api/notes/${id}`)
         toast.success("Note Deleted Successfully!")
         router.push("/")
         
@@ -64,7 +64,7 @@ const NoteDetails = () => {
       }
         setSaving(true)
         try {
-          await axios.put(`${process.env.NEXT_PUBLIC_URL}/api/notes/${id}`, note)
+          await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/api/notes/${id}`, note)
           toast.success("Note Updated Successfully!")
           router.push("/")
           
