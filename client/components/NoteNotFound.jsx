@@ -9,7 +9,7 @@ const NoteNotFound = () => {
              <SlNotebook className="size-10 text-[#00FF9D]" />
         </div>
         <h1 className="text-2xl text-white font-bold">No Notes Yet</h1>
-        <p className="text-gray-300">
+        <p className="text-gray-300 px-4">
           Ready to organise your thoughts? Create your first note
           to get started on the journey
         </p>
