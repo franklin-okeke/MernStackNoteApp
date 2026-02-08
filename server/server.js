@@ -13,7 +13,9 @@ const PORT = process.env.PORT || 3000
 
 // middlewares
 app.use(cors({
-    origin:["http://localhost:3000","https://mern-stack-note-app-ochre.vercel.app/"]
+    origin:["http://localhost:3000","https://mern-stack-note-app-ochre.vercel.app"],
+    
+    methods:["GET","POST","PUT","DELETEs"]
 }))
 app.use(express.json())
 app.use(rateLimiter)
